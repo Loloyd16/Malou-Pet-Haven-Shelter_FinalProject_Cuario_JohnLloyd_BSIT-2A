@@ -149,60 +149,69 @@
 
   
     <!-- Pet List Section -->
-    <div id="petList" class="grid grid-cols-4 gap-8 p-8">
+    <div id="petList" class="grid grid-cols-4 gap-8 p-8 fade-in">
         <!-- Pets will be at the js fileeee -->
     </div>
   
-    <!-- Payment Popup -->
-    <div id="paymentPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-        <div class="bg-cyan-300 p-8 rounded-lg shadow-lg max-w-md w-full">
-            <h2 id="donationTitle" class="text-2xl text-center font-bold text-cyan-900 mb-4">Only a few more steps to get your pet!</h2>
-       
-            <form id="donationDetails" onsubmit="submitAdoption(event)">
-                <label class="block text-cyan-900 mb-2 font-medium">Full Name</label>
-                <input type="text" id="donorName" class="w-full border rounded-md p-2 mb-4" placeholder="Name:" required>
-    
-                <label class="block mb-2 text-cyan-900 font-medium">Phone Number</label>
-                <input type="tel" id="phoneNumber" class="w-full border rounded-md p-2 mb-4" placeholder="Phone Number:" required>
-    
-                <label class="block mb-2 text-cyan-900 font-medium">Donation Amount</label>
-                <input type="number" id="donationAmount" class="w-full border rounded-md p-2 mb-4" placeholder="Enter Amount:" min="1" required>
-    
-                <label class="block mb-2 text-cyan-900 font-medium">Choose Payment Method</label>
-                <div class="relative">
-                    <button id="dropdownButton" type="button" class="bg-white w-full border rounded-md p-2 text-left flex items-center justify-between" onclick="toggleDropdown()">
-                        <span id="selectedOption">Select Your Payment Method</span>
-                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <ul id="dropdownMenu" class="absolute z-10 w-full bg-white border rounded-md shadow-lg hidden">
-                        <li class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-200" onclick="selectOption('GCASH', 'assets/gcash.png')">
-                            <img src="assets/gcash.png" alt="GCASH" class="h-6 w-6"> GCASH
-                        </li>
-                        <li class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-200" onclick="selectOption('PAYPAL', 'assets/PAYPAL.png')">
-                            <img src="assets/PAYPAL.png" alt="PAYPAL" class="h-6 w-6"> PAYPAL
-                        </li>
-                        <li class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-200" onclick="selectOption('BDO', 'assets/BDO.png')">
-                            <img src="assets/BDO.png" alt="GCASH" class="h-6 w-6 font-semibold"> BDO
-                        </li>
-                        <li class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-200" onclick="selectOption('BPI', 'assets/BPI.png')">
-                            <img src="assets/BPI.png" alt="GCASH" class="h-6 w-6 font-semibold"> BPI
-                        </li>
-                        <li class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-200" onclick="selectOption('CASH', 'assets/CASH.png')">
-                            <img src="assets/CASH.png" alt="CASH" class="h-6 w-6"> CASH
-                        </li>
-                    </ul>
-                </div>
-    
-                <!-- Buttons -->
-                <div class="flex justify-end gap-2 mt-10">
-                    <button type="button" onclick="closeAdoptionForm()" class="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500">Cancel</button>
-                    <button type="submit" class="bg-cyan-600 text-white px-4 py-2 rounded hover:bg-cyan-700">Adopt</button>
-                </div>
-            </form>
-        </div>
+   <!-- Payment Popup -->
+<div id="paymentPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-cyan-300 p-8 rounded-lg shadow-lg max-w-md w-full">
+        <h2 id="donationTitle" class="text-2xl text-center font-bold text-cyan-900 mb-4">Only a few more steps to get your pet!</h2>
+   
+        <form id="donationDetails" onsubmit="submitAdoption(event)">
+            <label class="block text-cyan-900 mb-2 font-medium">Full Name</label>
+            <input type="text" id="donorName" class="w-full border rounded-md p-2 mb-4" placeholder="Name:" required>
+
+            <label class="block mb-2 text-cyan-900 font-medium">Phone Number</label>
+            <input type="tel" id="phoneNumber" class="w-full border rounded-md p-2 mb-4" placeholder="Phone Number:" required>
+
+            <label class="block mb-2 text-cyan-900 font-medium">Amount</label>
+            <input type="number" id="donationAmount" class="w-full border rounded-md p-2 mb-4 bg-gray-100" value="500" readonly>
+
+            <label class="block mb-2 text-cyan-900 font-medium">Choose Payment Method</label>
+            <div class="relative">
+                <button id="dropdownButton" type="button" class="bg-white w-full border rounded-md p-2 text-left flex items-center justify-between" onclick="toggleDropdown()">
+                    <span id="selectedOption">Select Your Payment Method</span>
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <ul id="dropdownMenu" class="absolute z-10 w-full bg-white border rounded-md shadow-lg hidden">
+                    <li class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-200" onclick="selectOption('GCASH', 'assets/gcash.png')">
+                        <img src="assets/gcash.png" alt="GCASH" class="h-6 w-6"> GCASH
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-200" onclick="selectOption('PAYPAL', 'assets/PAYPAL.png')">
+                        <img src="assets/PAYPAL.png" alt="PAYPAL" class="h-6 w-6"> PAYPAL
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-200" onclick="selectOption('BDO', 'assets/BDO.png')">
+                        <img src="assets/BDO.png" alt="GCASH" class="h-6 w-6 font-semibold"> BDO
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-200" onclick="selectOption('BPI', 'assets/BPI.png')">
+                        <img src="assets/BPI.png" alt="GCASH" class="h-6 w-6 font-semibold"> BPI
+                    </li>
+                    <li class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-200" onclick="selectOption('CASH', 'assets/CASH.png')">
+                        <img src="assets/CASH.png" alt="CASH" class="h-6 w-6"> CASH
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex justify-end gap-2 mt-10">
+                <button type="button" onclick="closeAdoptionForm()" class="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500">Cancel</button>
+                <button type="submit" class="bg-cyan-600 text-white px-4 py-2 rounded hover:bg-cyan-700">Adopt</button>
+            </div>
+        </form>
     </div>
+</div>
+
+<!-- Success Message -->
+<div id="successMessage" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-green-500 text-white p-8 rounded-lg shadow-lg text-center max-w-md">
+        <h2 class="text-2xl font-semibold mb-4">Adoption Successful!</h2>
+        <p>Thank you and enjoy your life with your new friend!</p>
+        <button onclick="closeSuccessMessage()" class="mt-4 bg-white text-green-500 px-4 py-2 rounded hover:bg-gray-200">Close</button>
+    </div>
+</div>
 
     <!-- Footer-->
     <footer class="fade-in bg-gradient-to-r from-cyan-400 to-blue-500 text-white py-6 fade-in z-10">

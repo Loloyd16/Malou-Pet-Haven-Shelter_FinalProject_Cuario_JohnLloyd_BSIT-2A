@@ -66,8 +66,14 @@ function closeForm() {
 }
 
 function submitForm() {
-  alert("Registration Successful!");
+  
   closeForm();
+  
+  document.getElementById("successMessage").classList.remove("hidden");
+}
+
+function closeSuccessMessage() {
+  document.getElementById("successMessage").classList.add("hidden");
 }
 
 

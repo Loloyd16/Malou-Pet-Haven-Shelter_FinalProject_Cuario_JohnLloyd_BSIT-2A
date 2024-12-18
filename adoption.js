@@ -127,45 +127,46 @@ document.addEventListener('DOMContentLoaded', function() {
     
 });
 
-
 function openPaymentPopup(petName) {
-    document.getElementById('donationTitle').textContent = `Only a few more steps, so you can Take  ${petName} Home!`;
-    
-    document.getElementById('paymentPopup').classList.remove('hidden');
+  document.getElementById('donationTitle').textContent = `Only a few more steps, so you can Take ${petName} Home!`;
+  document.getElementById('paymentPopup').classList.remove('hidden');
 }
 
 function submitAdoption(event) {
-    event.preventDefault(); 
+  event.preventDefault(); 
 
-    const donorName = document.getElementById('donorName').value;
-    const donationAmount = document.getElementById('donationAmount').value;
+  const donorName = document.getElementById('donorName').value;
 
-    alert(`Thank you, ${donorName}, and enjoy your life with you new friend!`);
-    closeDonationForm(); 
+  if (donorName) {
+      document.getElementById('paymentPopup').classList.add('hidden');
+      document.getElementById('successMessage').classList.remove('hidden');
+  }
 }
 
-
 function closeAdoptionForm() {
-    document.getElementById('paymentPopup').classList.add('hidden');
-    document.getElementById('donationDetails').reset(); 
+  document.getElementById('paymentPopup').classList.add('hidden');
+  document.getElementById('donationDetails').reset(); 
+}
+
+function closeSuccessMessage() {
+  document.getElementById('successMessage').classList.add('hidden');
 }
 
 function selectOption(optionName, imgSrc) {
-    const dropdownButton = document.getElementById('dropdownButton');
+  const dropdownButton = document.getElementById('dropdownButton');
 
-    dropdownButton.innerHTML = `
-        <span class="flex items-center gap-3">
-            <img src="${imgSrc}" alt="${optionName}" class="h-6 w-6"> ${optionName}
-        </span>
-        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-    `;
+  dropdownButton.innerHTML = `
+      <span class="flex items-center gap-3">
+          <img src="${imgSrc}" alt="${optionName}" class="h-6 w-6"> ${optionName}
+      </span>
+      <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+  `;
 
-  
-    document.getElementById('dropdownMenu').classList.add('hidden');
+  document.getElementById('dropdownMenu').classList.add('hidden');
 }
 
 function toggleDropdown() {
-    document.getElementById('dropdownMenu').classList.toggle('hidden');
+  document.getElementById('dropdownMenu').classList.toggle('hidden');
 }
