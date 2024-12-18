@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Donation</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+
+
+      <style>
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
+
+        
+        footer {
+            z-index: 10;
+        }
+    </style>
+
+  </head>
+  
+  <body class="bg-gradient-to-r from-cyan-50 to-blue-100 font-sans leading-normal tracking-normal">
+  
+      <!--nav bar-->
+    <div class="min-h-full">
+      <nav class="fixed top-0 left-0 w-full bg-gradient-to-r from-cyan-400 to-blue-500 shadow-md z-50">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div class="flex h-16 items-center justify-between">
+                  <div class="flex items-center">
+                      <div class="shrink-0">
+                          <img class="size-8" src="./assets/logo.png" alt="Malou Pet Haven Shelter">
+                      </div>
+                      <div class="shrink-0 font-medium text-white ml-3">
+                          <h1>Malou Pet Haven Shelter</h1>
+                      </div>
+                  </div>
+
+                  <!-- Mobile Menu Button -->
+                  <div class="-mr-2 flex md:hidden">
+                      <button id="menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                          </svg>
+                      </button>
+                  </div>
+
+                  <!-- Desktop Menu -->
+                  <div class="hidden md:block">
+                      <div class="ml-10 flex items-baseline space-x-4">
+                          <a href="./Adoption.html" class="rounded-md px-3 py-2 text-m font-medium text-white hover:bg-cyan-400">Adopt</a>
+                          <a href="#" class="rounded-md px-3 py-2 text-m font-medium text-white hover:bg-cyan-400">Donate</a>
+                          <a href="./events.html" class="rounded-md px-3 py-2 text-m font-medium text-white hover:bg-cyan-400">Events</a>
+                          <a href="./AboutUs.html" class="rounded-md px-3 py-2 text-m font-medium text-white hover:bg-cyan-400">About Us</a>
+                          <a href="./index.html" class="rounded-md px-3 py-2 text-m font-medium text-white hover:bg-cyan-400">Home</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </nav>
+  
+         <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-blue-700 px-2 pt-2 pb-3 space-y-1">
+            <a href="./Adoption.html" class="block rounded-md px-3 py-2 text-white hover:bg-cyan-400">Adopt</a>
+            <a href="./Donation.html" class="block rounded-md px-3 py-2 text-white hover:bg-cyan-400">Donate</a>
+            <a href="./events.html" class="block rounded-md px-3 py-2 text-white hover:bg-cyan-400">Events</a>
+            <a href="./AboutUs.html" class="block rounded-md px-3 py-2 text-white hover:bg-cyan-400">About Us</a>
+            <a href="./home.html" class="block rounded-md px-3 py-2 text-white hover:bg-cyan-400">Home</a>
+        </div>
+        </nav>
+        </div>
+
+      <!-- Supoorttt -->
+      <section class="bg-gradient-to-r from-cyan-500 to-blue-400 pt-20 pb-10 fade-in">
+          <div class="container mx-auto px-6 text-center">
+              <h1 class="text-5xl font-bold text-white">Support Our Mission</h1>
+              <p class="mt-5  font-semibold text-white">Every dollar you give provides vital care, shelter, and love to a pet in desperate need.</p>
+          </div>
+      </section>
+  
+      <!-- Donation Section -->
+      <section class="bg-gradient-to-r from-cyan-300 to-blue-200 fade-in ">
+          <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+              <!-- Left Section -->
+              <div>
+                  <img src="./assets/DONATE.png" alt="doneyt" class="rounded-md mb-6 h-[300px] w-[800px] ">
+                  <h2 class="text-3xl ml-10 font-bold text-cyan-900 mb-4">We are proudly non-profit,</h2>
+                  <p class=" ml-10 font-bold text-cyan-900 mb-6 leading-relaxed">
+                    Thousands of pets are waiting, facing uncertain futures without the basic necessities they deserve. They need your help to ensure they receive the care and attention they so desperately need. Join the thousands who are already making a difference by donating to provide food, shelter, and medical care. Your contribution provides vital support, directly impacting the lives of these vulnerable animals, and gives hope to animals in need, giving them a second chance at a happy life.
+                  </p>
+              </div>
+  
+              <!-- Right Section -->
+              <div class=" p-20">
+                  <h2 class="text-5xl font-bold text-left text-cyan-900 mb-6">Choose a Project to Donate</h2>
+  
+                  <div class="space-y-4">
+
+                      <!-- Donate Buttons -->
+                      <button onclick="openDonationForm('Paw-sitive Matches')" class="bg-blue-300 flex flex-col items-start gap-2 text-white py-2 px-4 w-full rounded-md hover:bg-cyan-600">
+                        <div class="flex items-center gap-3">
+                          <img src="assets/logo.png" alt="Logo" class="h-[30px] w-[30px] rounded-full border border-white">
+                          <span class="text-cyan-900 font-semibold text-2xl " >Donate to Paw-sitive Matches  -> </span>
+                        </div>
+                        <h2 class="text-sm text-left font-medium text-cyan-900">Donations to Paw-sitive Matches directly support the care of the animals awaiting adoption. This includes: medical care, food and supplies, event costs, shelter/rescue support.</h2>
+                      </button>
+
+                      <button onclick="openDonationForm('Run for Paws')" class="bg-blue-300 flex flex-col items-start gap-2 text-white py-2 px-4 w-full rounded-md hover:bg-cyan-600">
+                        <div class="flex items-center gap-3">
+                          <img src="assets/logo.png" alt="Logo" class="h-[30px] w-[30px] rounded-full border border-white">
+                          <span class="text-cyan-900 font-semibold text-2xl" >Donate to Run for Paws -></span>
+                        </div>
+                        <h2 class="text-sm text-left font-medium text-cyan-900">Funds raised through Run for Paws directly benefit animal welfare by: supporting local shelters and rescues; providing veterinary care; funding spay/neuter programs; and supporting community outreach and education.</h2>
+                      </button>
+                      
+                      <button onclick="openDonationForm('Pawsitive Training')" class="bg-blue-300 flex flex-col items-start gap-2 text-white py-2 px-4 w-full rounded-md hover:bg-cyan-600">
+                        <div class="flex items-center gap-3">
+                          <img src="assets/logo.png" alt="Logo" class="h-[30px] w-[30px] rounded-full border border-white">
+                          <span class="text-cyan-900 font-semibold text-2xl" >Donate to Pawsitive Training -></span>
+                        </div>
+                        <h2 class="text-sm text-left font-medium text-cyan-900">Donations for Pawsitive Training will be used for: scholarships for low-income families, training for shelter/rescue dogs, and community education workshops.</h2>
+                      </button>
+
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+    <!-- Donation Popup Form -->
+    <div id="donationForm" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-cyan-300 p-8 rounded-lg shadow-lg max-w-md w-full">
+            <h2 id="donationTitle" class="text-2xl text-center font-bold text-cyan-900 mb-4">Donate Now</h2>
+
+            
+            <form id="donationDetails" onsubmit="submitDonation(event)">
+                <label class="block text-cyan-900 mb-2 font-medium">Full Name</label>
+                <input type="text" id="donorName" class="w-full border rounded-md p-2 mb-4" placeholder="Name:" required>
+
+                <label class="block mb-2 text-cyan-900 font-medium">Phone Number</label>
+                <input type="tel" id="phoneNumber" class="w-full border rounded-md p-2 mb-4" placeholder="Phone Number:" required>
+
+                <label class="block mb-2 text-cyan-900 font-medium">Donation Amount</label>
+                <input 
+                    type="number" 
+                    id="donationAmount" 
+                    class="w-full border rounded-md p-2 mb-4" 
+                    placeholder="Enter Amount:" 
+                    min="1" 
+                    required
+                >
+
+                <label class="block mb-2 text-cyan-900 font-medium">Choose Payment Method</label>
+                <div class="relative">
+                    <button id="dropdownButton" type="button" class="bg-white w-full border rounded-md p-2 text-left flex items-center justify-between" onclick="toggleDropdown()">
+                        <span id="selectedOption">Select Your Payment Method</span>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <ul id="dropdownMenu" class="absolute z-10 w-full bg-white border rounded-md shadow-lg hidden">
+                        <li class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-200" onclick="selectOption('GCASH', 'assets/gcash.png')">
+                            <img src="assets/gcash.png" alt="GCASH" class="h-6 w-6"> GCASH
+                        </li>
+                        <li class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-200" onclick="selectOption('PAYPAL', 'assets/PAYPAL.png')">
+                            <img src="assets/PAYPAL.png" alt="PAYPAL" class="h-6 w-6"> PAYPAL
+                        </li>
+                        <li class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-200" onclick="selectOption('BDO', 'assets/BDO.png')">
+                            <img src="assets/BDO.png" alt="GCASH" class="h-6 w-6 font-semibold"> BDO
+                          </li>
+                          
+                          <li class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-200" onclick="selectOption('BPI', 'assets/BPI.png')">
+                          <img src="assets/BPI.png" alt="GCASH" class="h-6 w-6 font-semibold"> BPI
+                          </li>
+                        <li class="flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-gray-200" onclick="selectOption('CASH', 'assets/CASH.png')">
+                            <img src="assets/CASH.png" alt="CASH" class="h-6 w-6"> CASH
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex justify-end gap-2 mt-10">
+                    <button type="button" onclick="closeDonationForm()" class="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500">Cancel</button>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Donate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+  
+      <!-- Success Message -->
+      <div id="successMessage" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+          <div class="bg-green-500 text-white p-8 rounded-lg shadow-lg text-center max-w-md">
+              <h2 class="text-2xl font-semibold mb-4">Donation Successful!</h2>
+              <p>Thank you for your generous donation.</p>
+              <button onclick="closeSuccessMessage()" class="mt-4 bg-white text-green-500 px-4 py-2 rounded hover:bg-gray-200">Close</button>
+          </div>
+      </div>
+  
+
+      <!-- Footer-->
+     <footer class="fade-in bg-gradient-to-r from-cyan-400 to-blue-500 text-white py-6 fade-in z-10">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0 flex items-center">
+                <img class="size-8 mr-2" src="./assets/logo.png" alt="Malou Pet Haven Shelter">
+                <div>
+                    <h2 class="text-2xl font-bold">Malou Pet Haven Shelter</h2>
+                </div>
+            </div>
+  
+            <!-- Social Media Links -->
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="https://www.facebook.com/azhumane" class="hover:text-gray-300">
+                    <img src="./assets/facebook (1).png" alt="Facebook" class="h-6 w-6">
+                </a>
+                <a href="https://www.facebook.com/azhumane" class="hover:text-gray-300">
+                    <img src="./assets/twitter.png" alt="Twitter" class="h-6 w-6">
+                </a>
+                <a href="https://www.instagram.com/adopt.ph/?hl=en" class="hover:text-gray-300">
+                    <img src="./assets/insta.png" alt="Instagram" class="h-6 w-6">
+                </a>
+            </div>
+        </div>
+  
+        <!-- Copyright -->
+        <div class="mt-6 text-center text-sm text-white-200">
+            &copy; 2024 Malou Pet Haven Shelter. All rights reserved.
+        </div>
+    </footer>
+  
+   
+  
+  </body>
+  </html>
+  
+   
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
