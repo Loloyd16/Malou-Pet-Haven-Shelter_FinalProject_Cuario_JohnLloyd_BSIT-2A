@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
+
+        
+        footer {
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-cyan-50 to-blue-100 font-sans leading-normal tracking-normal">
+
+    <!--nav bar-->
+    <div class="min-h-full">
+        <nav class="fixed top-0 left-0 w-full bg-gradient-to-r from-cyan-400 to-blue-500 shadow-md z-50">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex h-16 items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="shrink-0">
+                            <img class="size-8" src="./assets/logo.png" alt="Malou Pet Haven Shelter">
+                        </div>
+                        <div class="shrink-0 font-medium text-white ml-3">
+                            <h1>Malou Pet Haven Shelter</h1>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="-mr-2 flex md:hidden">
+                        <button id="menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="./Adoption.html" class="rounded-md px-3 py-2 text-m font-medium text-white hover:bg-cyan-400">Adopt</a>
+                            <a href="./Donation.html" class="rounded-md px-3 py-2 text-m font-medium text-white hover:bg-cyan-400">Donate</a>
+                            <a href="./events.html" class="rounded-md px-3 py-2 text-m font-medium text-white hover:bg-cyan-400">Events</a>
+                            <a href="./AboutUs.html" class="rounded-md px-3 py-2 text-m font-medium text-white hover:bg-cyan-400">About Us</a>
+                            <a href="./home.html" class="rounded-md px-3 py-2 text-m font-medium text-white hover:bg-cyan-400">Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden bg-blue-700 px-2 pt-2 pb-3 space-y-1">
+        <a href="./Adoption.html" class="block rounded-md px-3 py-2 text-white hover:bg-cyan-400">Adopt</a>
+        <a href="./Donation.html" class="block rounded-md px-3 py-2 text-white hover:bg-cyan-400">Donate</a>
+        <a href="./events.html" class="block rounded-md px-3 py-2 text-white hover:bg-cyan-400">Events</a>
+        <a href="./AboutUs.html" class="block rounded-md px-3 py-2 text-white hover:bg-cyan-400">About Us</a>
+        <a href="./home.html" class="block rounded-md px-3 py-2 text-white hover:bg-cyan-400">Home</a>
+      </div>
+    </nav>
+  </div>
+
+        <!-- Header -->
+        <div class="pt-20 bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-6 fade-in">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-3xl md:text-4xl font-bold">Upcoming Events</h1>
+                <p class="text-lg mt-2">Join us for exciting activities and make a difference!</p>
+            </div>
+        </div>
+
+        <!-- Events Section -->
+        <main class="py-10 fade-in">
+            <div class="container mx-auto px-6">
+                <div class="grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                    <!-- Event1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img class="w-full h-64 object-cover" src="./assets/event1.png" alt="Event Image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-cyan-900">Paw-sitive Matches</h3>
+                            <p class="text-gray-600 mt-2">Join us to meet adorable pets looking for their forever homes.</p>
+                            <p class="mt-4 text-gray-500 text-sm">📅 Date: January 20, 2029</p>
+                            <p class="text-gray-500 text-sm">📍 Location: Ayala Malls Legazpi</p>
+                            <button onclick="openForm()" class="mt-4 inline-block bg-cyan-500 text-white px-4 py-2 rounded-md shadow hover:bg-blue-600">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Event2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img class="w-full h-64 object-cover" src="./assets/event2.png" alt="Event Image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-cyan-900">Run for Paws</h3>
+                            <p class="text-gray-600 mt-2">Run for a cause and help raise funds for pet care and shelter.</p>
+                            <p class="mt-4 text-gray-500 text-sm">📅 Date: April 16, 2029</p>
+                            <p class="text-gray-500 text-sm">📍 Location: Sawangan Park</p>
+                            <button onclick="openForm()" class="mt-4 inline-block bg-cyan-500 text-white px-4 py-2 rounded-md shadow hover:bg-blue-600">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Event3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img class="w-full h-64 object-cover" src="./assets/event3.png" alt="Event Image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-cyan-900">Pawsitive Training</h3>
+                            <p class="text-gray-600 mt-2">Learn how to care for pets in need and help at the shelter.</p>
+                            <p class="mt-4 text-gray-500 text-sm">📅 Date: May 4, 2029</p>
+                            <p class="text-gray-500 text-sm">📍 Location: Pacific Malls Legazpi</p>
+                            <button onclick="openForm()" class="mt-4 inline-block bg-cyan-500 text-white px-4 py-2 rounded-md shadow hover:bg-blue-600">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Event4 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img class="w-full h-64 object-cover" src="./assets/event4.png" alt="Event Image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-cyan-900">MORE EVENTS SOON!</h3>
+                            <p class="text-gray-600 mt-2">More fun and exciting events are coming your way, stay tuned to our page to learn more!</p>
+                            <p class="mt-4 text-gray-500 text-sm">📅 Date: TBA</p>
+                            <p class="text-gray-500 text-sm">📍 Location: TBA</p>
+                            <button onclick="openForm()" class="mt-4 inline-block bg-cyan-500 text-white px-4 py-2 rounded-md shadow hover:bg-blue-600">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer-->
+        <footer class="fade-in bg-gradient-to-r from-cyan-400 to-blue-500 text-white py-6 fade-in z-10">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0 flex items-center">
+                    <img class="size-8 mr-2" src="./assets/logo.png" alt="Malou Pet Haven Shelter">
+                    <div>
+                        <h2 class="text-2xl font-bold">Malou Pet Haven Shelter</h2>
+                    </div>
+                </div>
+
+                <!-- Social Media Links -->
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="https://www.facebook.com/azhumane" class="hover:text-gray-300">
+                        <img src="./assets/facebook (1).png" alt="Facebook" class="h-6 w-6">
+                    </a>
+                    <a href="https://www.facebook.com/azhumane" class="hover:text-gray-300">
+                        <img src="./assets/twitter.png" alt="Twitter" class="h-6 w-6">
+                    </a>
+                    <a href="https://www.instagram.com/adopt.ph/?hl=en" class="hover:text-gray-300">
+                        <img src="./assets/insta.png" alt="Instagram" class="h-6 w-6">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-6 text-center text-sm text-white-200">
+                &copy; 2024 Malou Pet Haven Shelter. All rights reserved.
+            </div>
+        </footer>
+
+        <!-- Registration Form Popup -->
+        <div id="registrationForm" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50" style="display: none;">
+            <div class="bg-cyan-400 p-6 rounded-lg shadow-md w-80">
+                <h2 class="text-2xl text-center text-white font-bold mb-4">Registration Form</h2>
+                <form onsubmit="submitForm(); return false;">
+                    <label class="text-white block mb-2">Name:</label>
+                    <input type="text" class="w-full mb-4 p-2 border rounded" required>
+
+                    <label class="text-white block mb-2">Email:</label>
+                    <input type="email" class="w-full mb-4 p-2 border rounded" required>
+
+                    <div class="flex justify-end gap-2">
+                        <button type="button" onclick="closeForm()" class="bg-blue-400 text-white px-4 py-2 rounded hover:bg-gray-500">Cancel</button>
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-cyan-900">Register</button>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-green-500 text-white p-8 rounded-lg shadow-lg text-center max-w-md">
+            <h2 class="text-2xl font-semibold mb-4">Registration Successful!</h2>
+            <p>Pack your things and we'll see you there!</p>
+            <button onclick="closeSuccessMessage()" class="mt-4 bg-white text-green-500 px-4 py-2 rounded hover:bg-gray-200">Close</button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
